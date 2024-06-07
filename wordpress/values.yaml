@@ -4,7 +4,7 @@
 #   auth:
 #     mysql-pass : "pass@123"
 
-
+image: lubnaibrahimu/lu1-wordpress
 
 persistence:
   enabled: true

@@ -45,8 +45,10 @@ spec:
         app: wordpress
         tier: frontend
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
-      - image: wordpress:6.2.1-apache
+      - image: "{{ .Values.image }}"
         name: wordpress
         resources:
           requests:
