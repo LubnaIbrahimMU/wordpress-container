@@ -1,0 +1,26 @@
+# appName : "wordpress"
+
+# mysql:
+#   auth:
+#     mysql-pass : "pass@123"
+
+
+
+persistence:
+  enabled: true
+  existingClaim: wp-pv-claim
+  size: 10Gi
+  accessMode: ReadWriteOnce
+
+msql:
+  primary:
+    persistence:
+      existingClaim: mysql-pv-claim
+      size: 2Gi
+      accessMode: ReadWriteOnce
+  # auth:
+  #   mysql-pass : "pass@123"
+  #   # rootPassword: "pass@123"
+  #   # password: "pass@123"
+  #   # database: "wordpress"
+  #   # username: "wordpress"
