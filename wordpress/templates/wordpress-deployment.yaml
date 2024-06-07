@@ -46,7 +46,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: wordpress:6.2.1-apache
+      - image: lubnaibrahimu/lu1-wordpress
         name: wordpress
         resources:
           requests:
