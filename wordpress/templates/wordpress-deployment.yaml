@@ -45,6 +45,8 @@ spec:
         app: wordpress
         tier: frontend
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - image: lubnaibrahimu/lu1-wordpress
         name: wordpress
@@ -89,6 +91,5 @@ spec:
       - name: wordpress-persistent-storage
         persistentVolumeClaim:
           claimName: wp-pv-claim
-
 
 
