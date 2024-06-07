@@ -1,31 +1,3 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: wordpress
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL: https://github.com/LubnaIbrahimMU/wordpress-container.git
-#     targetRevision: helm
-#     path: wordpress
-#     helm:
-#       valueFiles:
-#         - values.yaml
-#     # Reference the secret for accessing the private repo
-#     repoCreds:
-#       secretName: argocd-repo-creds
-#   destination:
-#     server: 'https://kubernetes.default.svc'
-#     namespace: wordpress
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - CreateNamespace=true
-
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -35,8 +7,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/LubnaIbrahimMU/wordpress-container.git
-    targetRevision: kustomize
-    path: kustomize
+    targetRevision: helm
+    path: wordpress
     helm:
       valueFiles:
         - values.yaml
@@ -52,3 +24,31 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+
+
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: wordpress
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/LubnaIbrahimMU/wordpress-container.git
+#     targetRevision: kustomize
+#     path: kustomize
+#     helm:
+#       valueFiles:
+#         - values.yaml
+#     # Reference the secret for accessing the private repo
+#     repoCreds:
+#       secretName: argocd-repo-creds
+#   destination:
+#     server: 'https://kubernetes.default.svc'
+#     namespace: wordpress
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
