@@ -76,3 +76,18 @@ helm upgrade lu-release wordpress --values wordpress/values.yaml --values wordpr
 minikube tunnel
 
  git clone https://github.com/kubernetes-incubator/metrics-server.git
+
+
+
+ 
+# for a private repos 
+ kubectl create secret generic argocd-repo-creds --type kubernetes.io/basic-auth \
+  --from-literal=username=<your-username> \
+  --from-literal=password=<your-personal-access-token> \
+  -n argocd
+
+
+kubectl create secret docker-registry regcred \
+  --docker-username=<docker-username> \
+  --docker-password=<docker-password> \
+  --docker-email=<docker-email>
