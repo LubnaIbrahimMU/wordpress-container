@@ -74,3 +74,5 @@ helm upgrade lu-release wordpress --values wordpress/values.yaml --values wordpr
 
 
 minikube tunnel
+
+ git clone https://github.com/kubernetes-incubator/metrics-server.git
