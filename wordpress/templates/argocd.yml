@@ -24,11 +24,8 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-<<<<<<< HEAD
   imagePullSecrets:
     - name: dockerhub-secret
-=======
->>>>>>> origin/helm
 
 
 # apiVersion: argoproj.io/v1alpha1
@@ -41,11 +38,7 @@ spec:
 #   source:
 #     repoURL: https://github.com/LubnaIbrahimMU/wordpress-container.git
 #     targetRevision: kustomize
-<<<<<<< HEAD
 #     path: k8s
-=======
-#     path: kustomize
->>>>>>> origin/helm
 #     helm:
 #       valueFiles:
 #         - values.yaml
@@ -60,8 +53,4 @@ spec:
 #       prune: true
 #       selfHeal: true
 #     syncOptions:
-<<<<<<< HEAD
 #       - CreateNamespace=true
-=======
-#       - CreateNamespace=true
->>>>>>> origin/helm
