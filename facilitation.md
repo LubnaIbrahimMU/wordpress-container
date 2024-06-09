@@ -71,7 +71,6 @@ helm install new-release-name wordpress --values wordpress/values.yaml
 helm upgrade lu-release wordpress/ --values wordpress/values.yaml
 
 
-helm upgrade lu-release wordpress --values wordpress/values.yaml --values wordpress/values.yaml 
 
 
 
@@ -128,3 +127,6 @@ kubectl create secret generic github-credentials \
 kubectl get secret github-credentials -n argocd -o yaml
 
 argocd app sync wordpress-app
+
+
+helm upgrade lu-release wordpress/ --values wordpress/values.yaml

@@ -25,7 +25,7 @@ spec:
     syncOptions:
       - CreateNamespace=true
   imagePullSecrets:
-    - name: dockerhub-secret
+    - name: d
 
 
 # apiVersion: argoproj.io/v1alpha1
