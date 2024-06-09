@@ -68,6 +68,7 @@ helm upgrade lupress-release wordpress/ --values wordpress/values.yaml
 helm install new-release-name wordpress --values wordpress/values.yaml
 
 
+helm upgrade lu-release wordpress/ --values wordpress/values.yaml
 
 
 helm upgrade lu-release wordpress --values wordpress/values.yaml --values wordpress/values.yaml 
@@ -77,3 +78,53 @@ helm upgrade lu-release wordpress --values wordpress/values.yaml --values wordpr
 minikube tunnel
 
  git clone https://github.com/kubernetes-incubator/metrics-server.git
+
+minikube service wordpress --url
+
+
+ kubectl create secret docker-registry dockerhub-secret \
+  --docker-username=<your-dockerhub-username> \
+  --docker-password=<your-dockerhub-access-token> \
+  --docker-email=<your-email> \
+  --namespace=argocd
+
+
+
+#Step 2: Patch the Argo CD Deployment Correctly
+
+
+kubectl patch deployment argocd-repo-server -n argocd --type=json -p='[{"op": "add", "path": "/spec/template/spec/containers/0/env/-", "value": {"name": "ARGOCD_ENV_SECRET_KEY","valueFrom": {"secretKeyRef": {"name": "dockerhub-secret", "key": ".dockerconfigjson"}}}}]'
+
+
+#verfiy
+
+kubectl get secret dockerhub-secret -n argocd -o yaml
+kubectl get deployment argocd-repo-server -n argocd -o yaml
+
+
+kubectl create secret generic github-credentials \
+  --from-literal=username=<your-github-username> \
+  --from-literal=password=<your-github-token> \
+  --namespace=argocd
+
+
+
+kubectl create secret generic github-credentials \
+  --from-literal=url=https://github.com/<your-repo> \
+  --from-literal=username=<your-github-username> \
+  --from-literal=password=<your-github-token> \
+  --namespace=argocd \
+  --dry-run=client -o yaml | kubectl apply -f -
+
+
+kubectl create secret generic github-credentials \
+  --from-literal=url=https://github.com/https://github.com/LubnaIbrahimMU/wordpress-container.git \
+  --from-literal=username=lubnaibahimmu \
+  --from-literal=password=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 \
+  --namespace=argocd \
+  --dry-run=client -o yaml | kubectl apply -f -
+
+
+kubectl get secret github-credentials -n argocd -o yaml
+
+argocd app sync wordpress-app
