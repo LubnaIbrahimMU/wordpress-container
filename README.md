@@ -83,6 +83,10 @@ helm upgrade lupress-release wordpress/ --values wordpress/values.yaml
 ```
 kubectl apply -k .
 ```
+## The difference between Helm and Kustomize
 
-
+* Helm is more like a full-featured package manager for Kubernetes, great for deploying complex applications with dependencies and requiring templating.
+* Kustomize is a configuration management tool focusing on customizing Kubernetes resource files without introducing the complexity of templating.
+  
+Depending on your specific needs—whether you prioritize simplicity and direct YAML manipulation (Kustomize) or require advanced templating and package management capabilities (Helm)—you can choose the tool that best fits your Kubernetes configuration and deployment workflow.
 
