@@ -22,8 +22,8 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+    # syncOptions:
+    #   - CreateNamespace=true
   # imagePullSecrets:
   #   - name: regcred
 
