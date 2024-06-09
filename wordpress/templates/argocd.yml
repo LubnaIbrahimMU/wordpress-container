@@ -9,23 +9,23 @@ spec:
     repoURL: https://github.com/LubnaIbrahimMU/wordpress-container.git
     targetRevision: helm
     path: wordpress
-    helm:
-      valueFiles:
-        - values.yaml
+    # helm:
+    #   valueFiles:
+    #     - values.yaml
     # Reference the secret for accessing the private repo
     repoCreds:
       secretName: argocd-repo-creds
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: wordpress
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  imagePullSecrets:
-    - name: regcred
+  # imagePullSecrets:
+  #   - name: regcred
 
 
 # apiVersion: argoproj.io/v1alpha1
