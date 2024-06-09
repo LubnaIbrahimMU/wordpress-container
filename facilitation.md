@@ -91,3 +91,6 @@ kubectl create secret docker-registry regcred \
   --docker-username=<docker-username> \
   --docker-password=<docker-password> \
   --docker-email=<docker-email>
+
+
+  minikube service wordpress --url
