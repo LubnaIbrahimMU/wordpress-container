@@ -48,7 +48,7 @@ spec:
       imagePullSecrets:
       - name: regcred
       containers:
-      - image: "{{ .Values.image }}"
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: wordpress
         resources:
           requests:

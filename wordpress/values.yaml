@@ -4,7 +4,19 @@
 #   auth:
 #     mysql-pass : "pass@123"
 
-image: lubnaibrahimu/lu1-wordpress
+# image: lubnaibrahimu/lu1-wordpress
+
+
+
+
+image:
+  repository: lubnaibrahimu/lu1-wordpress
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: latest
+
+
+
 
 persistence:
   enabled: true

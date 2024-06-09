@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: wordpress
+  name: wordpress-lu
   namespace: argocd
 spec:
   project: default
