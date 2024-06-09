@@ -24,6 +24,8 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+  imagePullSecrets:
+    - name: dockerhub-secret
 
 
 # apiVersion: argoproj.io/v1alpha1
