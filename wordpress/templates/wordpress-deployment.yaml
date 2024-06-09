@@ -48,7 +48,7 @@ spec:
       imagePullSecrets:
       - name: regcred
       containers:
-      - image: lubnaibrahimu/lu1-wordpress
+      - image: "{{ .Values.image }}"
         name: wordpress
         resources:
           requests:
