@@ -6,10 +6,10 @@ COPY . /var/www/html
 
 
 # Set environment variables for MySQL
-ENV WORDPRESS_DB_HOST=db:3306
-ENV WORDPRESS_DB_USER=wordpressuser
-ENV WORDPRESS_DB_PASSWORD=wordpresspassword
-ENV WORDPRESS_DB_NAME=wordpress
+# ENV WORDPRESS_DB_HOST=db:3306
+# ENV WORDPRESS_DB_USER=wordpressuser
+# ENV WORDPRESS_DB_PASSWORD=wordpresspassword
+# ENV WORDPRESS_DB_NAME=wordpress
 
 # Expose port 80
 EXPOSE 80
