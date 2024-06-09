@@ -88,6 +88,17 @@ minikube service wordpress --url
   --namespace=argocd
 
 
+kubectl create secret docker-registry regcred \
+  --docker-username=<docker-username> \
+  --docker-password=<docker-password> \
+  --docker-email=<docker-email>
+
+
+  kubectl create secret docker-registry regcred \
+  --docker-username=lubnaibrahimu \
+  --docker-password=dckr_pat_mORTaA6K-bFQ-8WbNJoSMSEf_GE \
+  --docker-email=lubnaibrahim000@gmail.com
+
 
 #Step 2: Patch the Argo CD Deployment Correctly
 

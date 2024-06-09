@@ -25,7 +25,7 @@ spec:
     syncOptions:
       - CreateNamespace=true
   imagePullSecrets:
-    - name: d
+    - name: regcred
 
 
 # apiVersion: argoproj.io/v1alpha1
