@@ -94,12 +94,6 @@ kubectl create secret docker-registry regcred \
   --docker-email=<docker-email>
 
 
-  kubectl create secret docker-registry regcred \
-  --docker-username=lubnaibrahimu \
-  --docker-password=dckr_pat_mORTaA6K-bFQ-8WbNJoSMSEf_GE \
-  --docker-email=lubnaibrahim000@gmail.com
-
-
 #Step 2: Patch the Argo CD Deployment Correctly
 
 
@@ -127,12 +121,6 @@ kubectl create secret generic github-credentials \
   --dry-run=client -o yaml | kubectl apply -f -
 
 
-kubectl create secret generic github-credentials \
-  --from-literal=url=https://github.com/https://github.com/LubnaIbrahimMU/wordpress-container.git \
-  --from-literal=username=lubnaibahimmu \
-  --from-literal=password=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 \
-  --namespace=argocd \
-  --dry-run=client -o yaml | kubectl apply -f -
 
 
 kubectl get secret github-credentials -n argocd -o yaml
