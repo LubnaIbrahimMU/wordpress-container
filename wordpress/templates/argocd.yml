@@ -13,8 +13,8 @@ spec:
     #   valueFiles:
     #     - values.yaml
     # Reference the secret for accessing the private repo
-    repoCreds:
-      secretName: argocd-repo-creds
+    # repoCreds:
+    #   secretName: argocd-repo-creds
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
