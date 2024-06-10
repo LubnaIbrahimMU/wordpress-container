@@ -129,3 +129,27 @@ argocd app sync wordpress-app
 
 
 helm upgrade lu-release wordpress/ --values wordpress/values.yaml
+
+
+kubectl create secret generic argocd-repo-creds \
+  --from-literal=username=lubnaibrahimmu \
+  --from-literal=password= token \
+  -n argocd
+
+
+
+kubectl edit configmap argocd-cm -n argocd
+
+
+data:
+  repositories: |
+    - url: https://github.com/LubnaIbrahimMU/wordpress-container.git
+      usernameSecret:
+        name: argocd-repo-creds
+        key: username
+      passwordSecret:
+        name: argocd-repo-creds
+        key: password
+
+
+helm upgrade lu-release wordpress/ --values wordpress/values.yaml

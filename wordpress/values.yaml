@@ -18,6 +18,16 @@ image:
 
 
 
+database: wordpress
+user: wordpress
+
+
+
+
+
+
+
+
 persistence:
   enabled: true
   existingClaim: wp-pv-claim
