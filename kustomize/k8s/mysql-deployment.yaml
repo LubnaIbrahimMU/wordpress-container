@@ -47,7 +47,7 @@ spec:
     spec:
       containers:
       - image: mysql:8.0
-        name: mysql
+        name: mysqlk
         env:
         - name: MYSQL_ROOT_PASSWORD
           valueFrom:
