@@ -2,6 +2,9 @@ secretGenerator:
 - name: mysql-pass
   literals:
   - password=pass@123
+images:
+  - name: lubnaibrahimu/lu1-wordpress
+    newTag: latest
 resources:
   - mysql-deployment.yaml
   - wordpress-deployment.yaml
@@ -9,5 +12,4 @@ resources:
 
 
 
- 
  
