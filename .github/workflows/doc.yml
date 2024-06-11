@@ -51,7 +51,7 @@ jobs:
 
       - name: Update deploy.yaml
         run: |
-          sed -i "s|newTag: .*|newTag: ${{ secrets.DOCKER_USERNAME }}/lu1-wordpress:${{ steps.vars.outputs.short_commit_hash }}|g" kustomize/k8s/kustomization.yaml
+          sed -i "s|newTag: .*|newTag: ${{ steps.vars.outputs.short_commit_hash }}|g" kustomize/k8s/kustomization.yaml
 
       - name: Print values.yaml after update
         run: cat wordpress/values.yaml
