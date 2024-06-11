@@ -43,7 +43,7 @@ jobs:
         run: cat wordpress/values.yaml
 
       - name: Print wordpress.yaml before update
-        run: cat kustomize/k8s/wordpress-deployment.yaml
+        run: cat kustomize/k8s/kustomization.yaml
 
 
         
@@ -54,14 +54,15 @@ jobs:
         
       - name: Update deploy.yaml
         run: |
-          sed -i "s|image: .*:latest|image: ${{ secrets.DOCKER_USERNAME }}/lu1-wordpress:${{ steps.vars.outputs.short_commit_hash }}|g" kustomize/k8s/wordpress-deployment.yaml
+          sed -i "s|newTag: .*:newTag: ${{ secrets.DOCKER_USERNAME }}/lu1-wordpress:${{ steps.vars.outputs.short_commit_hash }}|g" kustomize/k8s/kustomization.yaml
+
 
       - name: Print values.yaml after update
         run: cat wordpress/values.yaml
 
 
       - name: Print wordpress.yaml before update
-        run: cat kustomize/k8s/wordpress-deployment.yaml
+        run: cat kustomize/k8s/kustomization.yaml
 
       - name: Commit updated values.yaml
         env:
