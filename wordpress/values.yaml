@@ -13,7 +13,7 @@ image:
   repository: lubnaibrahimu/lu1-wordpress
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ae25482
+  tag: cb9e966
 
 
 
