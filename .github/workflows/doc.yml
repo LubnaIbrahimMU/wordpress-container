@@ -39,9 +39,30 @@ jobs:
       - name: Checkout Helm branch
         run: git checkout helm
 
+      - name: Print values.yaml before update
+        run: cat wordpress/values.yaml
+
+      - name: Print wordpress.yaml before update
+        run: cat kustomize/k8s/wordpress-deployment.yaml
+
+
+        
       - name: Update values.yaml
         run: |
           sed -i "s|tag:.*|tag: ${{ steps.vars.outputs.short_commit_hash }}|g" wordpress/values.yaml
+
+        
+      - name: Update values.yaml
+        run: |
+          sed -i "s|tag:.*|tag: ${{ steps.vars.outputs.short_commit_hash }}|g" kustomize/k8s/wordpress-deployment.yaml
+
+
+      - name: Print values.yaml after update
+        run: cat wordpress/values.yaml
+
+
+      - name: Print wordpress.yaml before update
+        run: cat kustomize/k8s/wordpress-deployment.yaml
 
       - name: Commit updated values.yaml
         env:
