@@ -153,3 +153,10 @@ data:
 
 
 helm upgrade lu-release wordpress/ --values wordpress/values.yaml
+
+
+
+
+argocd repo add https://github.com/LubnaIbrahimMU/wordpress-container --username lubnaibrahimmu --password 
+
+argocd login localhost:8081
