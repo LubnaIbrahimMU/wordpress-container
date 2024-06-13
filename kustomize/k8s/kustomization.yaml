@@ -4,7 +4,7 @@ secretGenerator:
   - password=pass@123
 images:
   - name: lubnaibrahimu/lu1-wordpress
-    newTag: cda165a
+    newTag: 5218f42
 resources:
   - mysql-deployment.yaml
   - wordpress-deployment.yaml
