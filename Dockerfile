@@ -10,7 +10,7 @@ COPY . /var/www/html
 # ENV WORDPRESS_DB_USER=wordpressuser
 # ENV WORDPRESS_DB_PASSWORD=wordpresspassword
 # ENV WORDPRESS_DB_NAME=wordpress
-
+##
 # Expose port 80
 EXPOSE 80
 
