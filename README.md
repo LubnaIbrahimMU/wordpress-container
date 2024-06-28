@@ -90,3 +90,17 @@ kubectl apply -k .
   
 Depending on your specific needs—whether you prioritize simplicity and direct YAML manipulation (Kustomize) or require advanced templating and package management capabilities (Helm)—you can choose the tool that best fits your Kubernetes configuration and deployment workflow.
 
+## For a private Repos
+
+```
+argocd login localhost:8081
+
+```
+then add your repo 
+
+argocd repo add https://github.com/<...> --username <ur_username> --password
+
+```
+argocd login localhost:8081
+
+```
